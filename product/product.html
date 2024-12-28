@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Nike</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Shopyfy">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="container">
+            <a href="/admin.php" class="navbar-brand">SHOPYFY</a>
+            <div class="navbar-wrap">
+                <ul class="navbar-menu">
+                    <li>
+                        <a href="#">О нас</a>
+                        <ul class="submenu">
+                            <li><a href="#" id="teamLink">Наша команда</a></li> 
+                            <li><a href="#">История</a></li>
+                            <li><a href="#">Контакты</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Портфолио</a>
+                        <ul class="submenu">
+                            <li><a href="#">Проекты</a></li>
+                            <li><a href="#">Отчеты</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="" class="callback">продукты</a>
+                        <ul class="submenu">
+                            <li><a href="puma.html">Puma</a></li>
+                            <li><a href="nike.html" >Nike</a></li>
+                            <li><a href="adidas.html" >Adidas</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/korzina.html">Корзина(<span id="cart-count">0</span>)</a></li>
+                </ul>
+            </div>
+    </div>
+</nav>
+
+<div class="sidebar">
+    <br>
+    <div class="cards-row">
+        <!-- Карточки продуктов -->
+
+        <div class="card" data-id="2_1" data-name="Nike-2" data-price="2500">
+            <h4 align="center">Nike-2</h4>
+            <img src="image2.jpg" alt="Nike-2" class="card-image">
+            <div class="card-buttons">
+                <button href="puma.html" class="buy-button">Puma</button>
+            </div>
+        </div>
+
+        <div class="card" data-id="3_1" data-name="Nike-3" data-price="2800">
+            <h4 align="center">Adidas</h4>
+            <img src="image3.jpeg" alt="Nike-3" class="card-image">
+            <div class="card-buttons">
+                <button href="nike.html" class="buy-button">Nike</button>
+            </div>
+        </div>
+
+        <div class="card" data-id="1_1" data-name="Nike-1" data-price="2200">
+            <h4 align="center">Nike-1</h4>
+            <img src="image1.jpg" alt="Nike-1" class="card-image">
+            <div class="card-buttons">
+                <button href="adidas.html" class="buy-button">Adidas</button>
+            </div>
+        </div>
+    </div>
+
+    
+    <br>
+</div>
+
+<div class="footer"> </div>
+
+<script src="scripts.js"></script>
+</body>
+</html>
