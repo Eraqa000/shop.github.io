@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>obuvnoi</title>
+    <link rel="website icon" type="png" href="icon.png">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="navbar-brand">SHOPYFY</a>
+            <button class="menu-toggle">☰</button> <!-- Кнопка гамбургер-меню -->
+            <div class="navbar-wrap">
+                <ul class="navbar-menu">
+                    <li>
+                        <a href="#">О нас</a>
+                        <ul class="submenu">
+                            <li><a href="#" id="teamLink">Наша команда</a></li>
+                            <li><a href="#">История</a></li>
+                            <li><a href="#">Контакты</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Портфолио</a>
+                        <ul class="submenu">
+                            <li><a href="#">Проекты</a></li>
+                            <li><a href="#">Отчеты</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Цены</a></li>
+                    <div class="auth-buttons">
+                        <a href="registration.html" class="register-button">Регистрация</a>
+                        <a href="login.html" class="login-button">Вход</a>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <script>
+        document.getElementById("teamLink").addEventListener("click", function(event) {
+            event.preventDefault();
+            document.body.style.backgroundColor = "green";
+        });
+    </script>
+
+    <div class="table-row">
+        <div class="table-container">
+            <div class="card-wrapper">
+                <div class="products-container">
+                    <div class="card">
+                        <div class="dots">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <div class="card-image">
+                            <div class="image-container center">
+                                <img src="photo/image1.jpg" alt="Товар 1" class="product-image">
+                            </div>
+                            <div class="image-container left">
+                                <img src="photo/image2.jpg" alt="Товар 1 - альтернатива" class="product-image">
+                            </div>
+                            <div class="image-container right">
+                                <img src="photo/image3.jpeg" alt="Товар 1 - альтернатива 2" class="product-image">
+                            </div>
+                            <div class="arrows">
+                                <button class="arrow left">←</button>
+                                <button class="arrow right">→</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="tabs">
+                <button class="tab-button active">Галерея</button>
+                <button class="tab-button">Описание</button>
+                <button class="tab-button">О модели</button>
+            </div>
+            <div class="buttons">
+                <button class="animated-button buy">Купить</button>
+                <button class="animated-button cart">Положить в корзину</button>
+                <button class="animated-button info">О товаре</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
