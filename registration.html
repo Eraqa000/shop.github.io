@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+    <form class="box" action="register.php" method="post" id="regForm">
+        <h1>РЕГИСТРАЦИЯ</h1>
+
+        <input type="text" placeholder="Имя" name="name" required>
+        <input type="text" placeholder="Фамилия" name="surname" required>
+
+        <input type="text" placeholder="Логин" name="login" required
+               pattern="^[A-Za-z0-9_]{4,20}$"
+               title="Только буквы, цифры и _ , 4-20 символов">
+
+        <input type="email" placeholder="Email" name="email" required>
+
+        <div class="password-wrapper">
+            <input type="password" placeholder="Пароль" name="pass" required
+                pattern="(?=.*[A-Za-z])(?=.*[\d\W]).{8,}"
+                title="Минимум 8 символов, хотя бы одна буква и один символ или цифра">
+            <span class="toggle-pass" onclick="togglePass(this)">👁️</span>
+        </div>
+
+        <div class="password-wrapper">
+            <input type="password" placeholder="Повторите пароль" name="repeatpass" required>
+            <span class="toggle-pass" onclick="togglePass(this)">👁️</span>
+        </div>
+
+
+        <button type="submit">Зарегистрироваться</button>
+        <button type="button" onclick="goBack()" class="back-button">Назад на главную</button>
+
+        <script>
+            function goBack() {
+                window.location.href = "index.html";
+            }
+
+            document.getElementById('regForm').addEventListener('submit', function(e){
+                const p = document.querySelector('input[name="pass"]').value;
+                const rp = document.querySelector('input[name="repeatpass"]').value;
+                if (p !== rp) {
+                    alert('Пароли не совпадают');
+                    e.preventDefault();
+                }
+            });
+
+            function togglePass(elem) {
+                const input = elem.previousElementSibling;
+
+                if (input.type === "password") {
+                    input.type = "text";
+                    elem.textContent = "🙈";
+                } else {
+                    input.type = "password";
+                    elem.textContent = "👁️";
+                }
+            }
+
+        </script>
+
+    </form>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background: #34495e;
+        }
+
+        .box {
+            width: 300px;
+            padding: 40px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background: #191919;
+            text-align: center;
+        }
+
+            .box h1 {
+                color: white;
+                text-transform: uppercase;
+                font-weight: 500;
+            }
+
+            .box input[type = "text"], .box input[type = "password"], .box input[type = "email"] {
+                border: 0;
+                background: none;
+                display: block;
+                margin: 12px auto;
+                text-align: center;
+                border: 2px solid #3498db;
+                padding: 10px 10px;
+                width: 220px;
+                outline: none;
+                color: white;
+                border-radius: 24px;
+                transition: 0.25s;
+            }
+
+                .box input[type = "text"]:focus, .box input[type = "password"]:focus, .box input[type = "email"]:focus {
+                    width: 220px;
+                    border-color: #2ecc71;
+                }
+
+            .box button[type = "submit"] {
+                border: 0;
+                background: none;
+                display: block;
+                margin: 16px auto;
+                text-align: center;
+                border: 2px solid #2ecc71;
+                padding: 12px 36px;
+                outline: none;
+                color: white;
+                border-radius: 24px;
+                transition: 0.25s;
+                cursor: pointer;
+            }
+
+                .box button[type = "submit"]:hover {
+                    background: #2ecc71;
+                }
+
+        .back-button {
+            margin-top: -5px;
+            padding: 10px 20px;
+            background-color: transparent;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+            .back-button:hover {
+                background-color: rgba(0,0,0,0.2);
+            }
+
+        .password-wrapper {
+            position: relative;
+            width: 240px;
+            margin: 12px auto;
+        }
+
+        .password-wrapper input {
+            width: 220px;
+            padding-right: 40px; /* место под иконку */
+        }
+
+        .toggle-pass {
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 18px;
+            color: #ccc;
+            user-select: none;
+        }
+
+        .toggle-pass:hover {
+            color: white;
+        }
+
+
+    </style>
+
+</body>
+</html>
